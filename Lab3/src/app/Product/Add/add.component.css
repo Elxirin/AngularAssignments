@@ -1,0 +1,15 @@
+.badge{
+    background-color: rgb(226, 71, 71);
+    text-align: center;
+    height: 30px;
+}
+
+input.ng-valid{
+    border-right: 5px solid green; 
+}
+
+
+
+input.ng-invalid {
+    border-right: 5px solid red;
+}
