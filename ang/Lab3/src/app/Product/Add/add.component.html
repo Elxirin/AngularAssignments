@@ -1,0 +1,69 @@
+<h1 align="center">Add</h1>
+
+<div class="card" style="width: 70%;">
+    <div class="card-body">
+        <div class="container">
+            <div><h5>Enter the Details of the Product to be added</h5></div>
+            <br>
+            <form #userForm='ngForm' (ngSubmit)="onSubmit(userForm.value)" >
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" align="left"> Product ID:</label>
+                    <input type="number" class="col-sm-5 form-control " #prodId='ngModel' placeholder="Enter the Product ID" name="prodId" required ngModel>
+                    <span *ngIf="prodId.invalid && (prodId.touched || prodId.dirty)" class="badge">
+                        Please Enter ProdID
+                    </span>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" align="left"> Product Name:</label>
+                    <input type="text" class="col-sm-5 form-control " placeholder="Enter the Product Name" name="prodId" required ngModel>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" align="left"> Product Cost:</label>
+                    <input type="number" class="col-sm-5 form-control " placeholder="Enter the Product Cost" name="prodName" required ngModel>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" align="left"> Product Online:</label>
+                    <div class="form-check " >
+                        <input type="radio" class="form-check-input col-sm-5" id="prodOnYes" name="prodOn" value="Yes" required ngModel>
+                        <label class="form-check-label" for="prodOnYes">Yes</label>
+                    </div>
+                    <div class="form-check " >
+                        <input type="radio" class="form-check-input col-sm-5" id="prodOnNo" name="prodOn" value="No" required ngModel>
+                        <label class="form-check-label" for="prodOnNo">No</label>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" align="left"> Product Category:</label>
+                    <select class="custom-select col-sm-5" id="prodCat" name="prodCat" required ngModel="Choose">
+                        <option selected value="Choose">Choose...</option>
+                        <option value="Grocery">Grocery</option>
+                        <option value="Mobile">Mobile</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Clothes">Clothes</option>
+                      </select>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" align="left">Avialable in store</label>
+                    <div class="form-check col-sm-2">
+                        <input class="form-check-input" type="checkbox" name="Big Baazar" id="bb" ngModel>
+                        <label class="form-check-label" for="bb">Big Baazar</label>
+                    </div>
+                    <div class="form-check col-sm-2">
+                        <input class="form-check-input" type="checkbox" name="Relaince" id="rl" ngModel>
+                        <label class="form-check-label" for="rl">Relaince</label>
+                    </div>
+                    <div class="form-check col-sm-2">
+                        <input class="form-check-input" type="checkbox" name="DMart" id="dm" ngModel>
+                        <label class="form-check-label" for="dm">DMart</label>
+                    </div>
+                </div>
+                <button  class="btn btn-primary" type="submit">Add Product</button>
+            </form>
+        </div>
+    </div>
+</div>
